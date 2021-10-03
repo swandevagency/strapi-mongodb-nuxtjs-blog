@@ -1,0 +1,83 @@
+//   <button @click="logIn()">login</button>
+//   <input type="text" placeholder="username" v-model="username">
+//   <input type="password" placeholder="password" v-model="password">
+//   <input type="text" placeholder="title" v-model="title" v-if="auth">
+//   <input type="text" placeholder="description" v-model="description" v-if="auth">
+//   <button @click="create()" v-if="auth">Create</button>
+//   <button @click="get()">get</button>
+//   <h3 v-if="showthis">{{fetched.Title}}</h3>
+//   <h4 v-if="showthis">{{fetched.Description}}</h4>
+//   <button @click="deleteReq()">delete</button>
+//   <button @click="put()">put</button>
+
+
+
+
+
+
+
+//  export default {
+//     data(){
+//       return{
+//         auth:false,
+//         username:'',
+//         password:'',
+//         posted:'',
+//         fetched:'',
+//         deleted:'',
+//         puted:'',
+//         showthis:false,
+//         title:'',
+//         description:'',
+//         response:'',
+//       }
+//     },
+//     methods:{
+  
+//       logIn(){
+//         console.log(this.username)
+//         console.log(this.password);
+//          this.$axios.post('http://localhost:1337/auth/local',{
+//            identifier: this.username,
+//            password: this.password
+//          })
+//          .then(res =>{
+//            if(res.status === 200){
+//             this.auth = true
+//             this.response = res
+//             localStorage.setItem('authToken', res.data.jwt)
+//            }
+//          })
+//          .catch(err =>{
+//            console.log(err)
+//          })
+//       },
+//       create(){
+//         const gubral = localStorage.getItem('authToken')
+//         const blogsinfo = {
+//           Title:this.title,
+//           Description: this.description
+//         }
+        
+//         const headers = {
+//           "Authorization": `Bearer ${localStorage.getItem('authToken')}`,
+//           'content-type':'application/json'
+//         }
+//         //console.log(headers)
+//         this.$axios.post('http://localhost:1337/blogs',blogsinfo,{headers})
+//       },
+//       get(){
+//         this.$axios.get('http://localhost:1337/blogs',)
+//         .then(res =>{
+//           if(res.status === 200){
+//             this.showthis = true
+//             this.fetched = res.data[3]
+//             console.log(res.data[3]);
+//           }
+//         })
+//         .catch(err =>{
+//           console.log(err);
+//         })
+//       },
+//     }
+//   } 
